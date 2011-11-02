@@ -11,7 +11,7 @@ assertEllipsis
 An assertion which is very helpful when using Testbrowser with
 unittest.TestCase (instead of doctests).
 
-Some examples:
+Some examples::
 
     self.assertEllipsis('...bar...', 'foo bar qux')
     # -> nothing happens
