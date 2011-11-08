@@ -32,3 +32,12 @@ class Ellipsis(object):
             pass
         else:
             self.fail('Value unexpectedly matches expression %r.' % expected)
+
+
+class Exceptions(object):
+
+    def assertNothingRaised(self, callable, *args, **kw):
+        try:
+            callable(*args, **kw)
+        except Exception, e:
+            self.fail('Exception raised: ' + repr(e))

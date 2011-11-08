@@ -26,3 +26,9 @@ Some examples::
 
 To use, inherit from ``gocept.testing.assertion.Ellipsis`` in addition to
 ``unittest.TestCase``.
+
+
+assertNothingRaised
+===================
+
+An assertion that makes some tests more readable.
