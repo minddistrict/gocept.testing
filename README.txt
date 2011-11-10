@@ -31,4 +31,10 @@ To use, inherit from ``gocept.testing.assertion.Ellipsis`` in addition to
 assertNothingRaised
 ===================
 
-An assertion that makes some tests more readable.
+The opposite of assertRaises(), this is an assertion that makes some tests more
+readable. As assertRaises(), it can be used as as context manager, too::
+
+    self.assertNothingRaised(do_something, 1, 2, 3)
+
+    with self.assertNothingRaised:
+        do_something(1, 2, 3)

@@ -36,8 +36,23 @@ class Ellipsis(object):
 
 class Exceptions(object):
 
-    def assertNothingRaised(self, callable, *args, **kw):
-        try:
+    def assertNothingRaised(self, callable=None, *args, **kw):
+        context = AssertNothingRaisedContext(self)
+        if callable is None:
+            return context
+        with context:
             callable(*args, **kw)
-        except Exception, e:
-            self.fail('Exception raised: ' + repr(e))
+
+
+class AssertNothingRaisedContext(object):
+
+    def __init__(self, test_case):
+        self.failureException = test_case.failureException
+
+    def __enter__(self):
+        return self
+
+    def __exit__(self, exc_type, exc_value, tb):
+        if exc_type is None:
+            return True
+        raise self.failureException('Exception raised: ' + repr(exc_value))
