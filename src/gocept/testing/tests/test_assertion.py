@@ -41,3 +41,44 @@ class EllipsisTest(unittest.TestCase, gocept.testing.assertion.Ellipsis):
                 str(e))
         else:
             self.fail('nothing raised')
+
+
+class ExceptionsTest(unittest.TestCase, gocept.testing.assertion.Exceptions):
+
+    def add(self, *args):
+        self.sum = sum(args)
+
+    def provoke(self):
+        raise RuntimeError('provoked')
+
+    def test_no_exception_passes(self):
+        self.assertNothingRaised(lambda: self.add(5, 5))
+        self.assertEqual(10, self.sum)
+
+    def test_exception_raised_fails(self):
+        try:
+            self.assertNothingRaised(self.provoke)
+        except AssertionError, e:
+            self.assertEqual(
+                'AssertionError("Exception raised: '
+                'RuntimeError(\'provoked\',)",)',
+                repr(e))
+        else:
+            self.fail('Nothing raised')
+
+    def test_usable_as_context_manager(self):
+        with self.assertNothingRaised():
+            self.add(5, 5)
+        self.assertEqual(10, self.sum)
+
+    def test_context_manager_failure_case(self):
+        try:
+            with self.assertNothingRaised():
+                self.provoke()
+        except AssertionError, e:
+            self.assertEqual(
+                'AssertionError("Exception raised: '
+                'RuntimeError(\'provoked\',)",)',
+                repr(e))
+        else:
+            self.fail('Nothing raised')
