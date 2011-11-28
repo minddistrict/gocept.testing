@@ -36,5 +36,5 @@ readable. As assertRaises(), it can be used as as context manager, too::
 
     self.assertNothingRaised(do_something, 1, 2, 3)
 
-    with self.assertNothingRaised:
+    with self.assertNothingRaised():
         do_something(1, 2, 3)
