@@ -4,7 +4,7 @@ CHANGES
 1.2 (unreleased)
 ----------------
 
-- Nothing changed yet.
+- Bugfix in documentation of ``assertNothingRaised``.
 
 
 1.1 (2011-11-10)
