@@ -4,6 +4,8 @@ gocept.testing
 
 This package collects various helpers for writing tests.
 
+.. contents:: :depth: 1
+
 
 assertEllipsis
 ==============
@@ -38,3 +40,13 @@ readable. As assertRaises(), it can be used as as context manager, too::
 
     with self.assertNothingRaised():
         do_something(1, 2, 3)
+
+
+Development
+===========
+
+The source code is available in the mercurial repository at
+https://code.gocept.com/hg/public/gocept.testing
+
+Please report any bugs you find at
+https://projects.gocept.com/projects/projects/gocept-testing/issues
