@@ -15,6 +15,10 @@ unittest.TestCase (instead of doctests).
 
 Some examples::
 
+    class MyTest(unittest.TestCase, gocept.testing.assertion.Ellipsis):
+    # [...]
+
+
     self.assertEllipsis('...bar...', 'foo bar qux')
     # -> nothing happens
 
@@ -35,6 +39,9 @@ assertNothingRaised
 
 The opposite of assertRaises(), this is an assertion that makes some tests more
 readable. As assertRaises(), it can be used as as context manager, too::
+
+    class MyTest(unittest.TestCase, gocept.testing.assertion.Exceptions):
+    # [...]
 
     self.assertNothingRaised(do_something, 1, 2, 3)
 
