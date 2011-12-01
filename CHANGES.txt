@@ -1,10 +1,10 @@
-CHANGES
-=======
+Changelog
+=========
 
 1.2 (unreleased)
 ----------------
 
-- Bugfix in documentation of ``assertNothingRaised``.
+- Nothing changed yet.
 
 
 1.1 (2011-11-10)
