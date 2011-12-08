@@ -27,5 +27,6 @@ A collection of test helpers, additional assertions, and the like.
         'setuptools',
     ],
     extras_require=dict(test=[
+        'mock',
     ]),
 )
