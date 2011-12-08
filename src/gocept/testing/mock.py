@@ -34,3 +34,9 @@ class Patches(object):
         for patch in self.patches:
             patch.stop()
         self.patches[:] = []
+
+
+class Assertions(object):
+
+    def assertCalledWith(self, mock, *args, **kw):
+        return mock.assert_called_with(*args, **kw)

@@ -70,3 +70,20 @@ lightweight as possible, so clients need to do that themselves.
 
 .. _`mock`: http://www.voidspace.org.uk/python/mock/
 .. _`issue 30`: http://code.google.com/p/mock/issues/detail?id=30
+
+
+assertCalledWith
+================
+
+This is syntactic sugar around ``mock.assert_called_with``, so you can write::
+
+    class MyTest(unittest.TestCase, gocept.testing.mock.Assertions):
+
+        def test_something(self):
+            dummy = mock.Mock()
+            dummy(True)
+            self.assertCalledWith(dummy, True)
+
+instead of::
+
+    dummy.assert_called_with(True)
