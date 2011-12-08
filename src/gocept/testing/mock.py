@@ -40,3 +40,9 @@ class Assertions(object):
 
     def assertCalledWith(self, mock, *args, **kw):
         return mock.assert_called_with(*args, **kw)
+
+
+class Property(mock.Mock):
+
+    def __get__(self, instance, class_):
+        return self()

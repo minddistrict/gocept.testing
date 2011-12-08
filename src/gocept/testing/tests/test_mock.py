@@ -74,3 +74,20 @@ class AssertionTest(unittest.TestCase, gocept.testing.mock.Assertions):
         dummy = mock.Mock()
         dummy(True)
         self.assertCalledWith(dummy, True)
+
+
+class Dummy(object):
+
+    @property
+    def foo(self):
+        return False
+
+
+class PropertyTest(unittest.TestCase):
+
+    def test_usable_to_patch_property(self):
+        dummy = Dummy()
+        with mock.patch('gocept.testing.tests.test_mock.Dummy.foo',
+                        gocept.testing.mock.Property()) as foo:
+            foo.return_value = True
+            self.assertTrue(dummy.foo)
