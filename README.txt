@@ -87,3 +87,23 @@ This is syntactic sugar around ``mock.assert_called_with``, so you can write::
 instead of::
 
     dummy.assert_called_with(True)
+
+
+Mocking properties
+==================
+
+``gocept.testing.mock.Property`` is syntactic sugar directly lifted from the
+`mock documentation`_ that allows you to patch properties like this::
+
+    class Dummy(object):
+
+        @property
+        def foo(self):
+            return False
+
+
+    with mock.patch('Dummy.foo', gocept.testing.mock.Property()) as foo:
+        foo.return_value = 'something else'
+
+
+.. _`mock documentation`: http://www.voidspace.org.uk/python/mock/examples.html#mocking-properties
