@@ -66,3 +66,11 @@ class PatcherTest(unittest.TestCase):
         patches.reset()
         self.assertEqual(
             subject.foo, mock.sentinel.Something, "patch not restored")
+
+
+class AssertionTest(unittest.TestCase, gocept.testing.mock.Assertions):
+
+    def test_should_delegate_to_mock_method(self):
+        dummy = mock.Mock()
+        dummy(True)
+        self.assertCalledWith(dummy, True)

@@ -6,15 +6,16 @@ CHANGES
 
 - Add Patches context for mock (upstream implementation pending,
   see <http://code.google.com/p/mock/issues/detail?id=30>)
+- Add ``assertCalledWith``.
 
 
 1.1 (2011-11-10)
 ----------------
 
-- Add assertNothingRaised.
+- Add ``assertNothingRaised``.
 
 
 1.0 (2011-11-02)
 ----------------
 
-- first release.
+- first release: ``assertEllipsis``
