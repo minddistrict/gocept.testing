@@ -4,7 +4,8 @@ CHANGES
 1.2 (unreleased)
 ----------------
 
-- Bugfix in documentation of ``assertNothingRaised``.
+- Add Patches context for mock (upstream implementation pending,
+  see <http://code.google.com/p/mock/issues/detail?id=30>)
 
 
 1.1 (2011-11-10)
