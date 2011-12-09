@@ -3,6 +3,15 @@
 
 import difflib
 import doctest
+import sys
+
+
+def text(arg):
+    if sys.version_info < (3,):
+        return arg
+    if not isinstance(arg, str):
+        arg = arg.decode('utf-8')
+    return arg
 
 
 class Ellipsis(object):
@@ -12,6 +21,8 @@ class Ellipsis(object):
     """
 
     def assertEllipsis(self, expected, actual):
+        expected = text(expected)
+        actual = text(actual)
         # normalize whitespace
         norm_expected = ' '.join(expected.split())
         norm_actual = ' '.join(actual.split())
@@ -31,7 +42,8 @@ class Ellipsis(object):
         except AssertionError:
             pass
         else:
-            self.fail('Value unexpectedly matches expression %r.' % expected)
+            self.fail(
+                'Value unexpectedly matches expression %r.' % expected)
 
 
 class Exceptions(object):
