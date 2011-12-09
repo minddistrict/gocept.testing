@@ -7,7 +7,9 @@ import sys
 import unittest
 
 
-class EllipsisTest(unittest.TestCase, gocept.testing.assertion.Ellipsis):
+class EllipsisTest(unittest.TestCase,
+                   gocept.testing.assertion.Ellipsis,
+                   gocept.testing.assertion.Exceptions):
 
     def test_match_found_nothing_happens(self):
         # assert nothing is raised
@@ -24,17 +26,20 @@ class EllipsisTest(unittest.TestCase, gocept.testing.assertion.Ellipsis):
         else:
             self.fail('nothing raised')
 
-    def test_unicode_matches_encoded(self):
-        # assert nothing is raised
-        self.assertEllipsis(u('...bar...'), u('foo bar baz').encode('utf-8'))
+    def test_unicode_matches_utf8(self):
+        # helpful for zope.testbrowser
+        with self.assertNothingRaised():
+            self.assertEllipsis(
+                u('...bar...'), u('foo bar baz').encode('utf-8'))
 
-    def test_encoded_matches_unicode(self):
-        # assert nothing is raised
-        self.assertEllipsis(u('...bar...').encode('utf-8'), u('foo bar baz'))
+    def test_utf8_matches_unicode(self):
+        with self.assertNothingRaised():
+            self.assertEllipsis(
+                u('...bar...').encode('utf-8'), u('foo bar baz'))
 
     def test_inverse_assertion(self):
-        # assert nothing is raised
-        self.assertNotEllipsis('foo', 'bar')
+        with self.assertNothingRaised():
+            self.assertNotEllipsis('foo', 'bar')
 
         try:
             self.assertNotEllipsis('...bar...', 'foo bar baz')
