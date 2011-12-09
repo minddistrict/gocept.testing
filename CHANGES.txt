@@ -1,7 +1,7 @@
 Changelog
 =========
 
-1.2 (unreleased)
+1.2 (2011-12-09)
 ----------------
 
 - Add Patches context for mock (upstream implementation pending,
