@@ -1,8 +1,10 @@
 # Copyright (c) 2011 gocept gmbh & co. kg
 # See also LICENSE.txt
 
-import unittest
+from six import u
 import gocept.testing.assertion
+import sys
+import unittest
 
 
 class EllipsisTest(unittest.TestCase, gocept.testing.assertion.Ellipsis):
@@ -14,7 +16,8 @@ class EllipsisTest(unittest.TestCase, gocept.testing.assertion.Ellipsis):
     def test_no_match_found_fails(self):
         try:
             self.assertEllipsis('foo', 'bar')
-        except AssertionError, e:
+        except AssertionError:
+            _, e, _ = sys.exc_info()
             self.assertEqual(
                 'Differences (ndiff with -expected +actual):\n- foo\n+ bar\n',
                 str(e))
@@ -23,11 +26,11 @@ class EllipsisTest(unittest.TestCase, gocept.testing.assertion.Ellipsis):
 
     def test_unicode_matches_encoded(self):
         # assert nothing is raised
-        self.assertEllipsis(u'...bar...', u'foo bar baz'.encode('utf-8'))
+        self.assertEllipsis(u('...bar...'), u('foo bar baz').encode('utf-8'))
 
     def test_encoded_matches_unicode(self):
         # assert nothing is raised
-        self.assertEllipsis(u'...bar...'.encode('utf-8'), u'foo bar baz')
+        self.assertEllipsis(u('...bar...').encode('utf-8'), u('foo bar baz'))
 
     def test_inverse_assertion(self):
         # assert nothing is raised
@@ -35,7 +38,8 @@ class EllipsisTest(unittest.TestCase, gocept.testing.assertion.Ellipsis):
 
         try:
             self.assertNotEllipsis('...bar...', 'foo bar baz')
-        except AssertionError, e:
+        except AssertionError:
+            _, e, _ = sys.exc_info()
             self.assertEqual(
                 "Value unexpectedly matches expression '...bar...'.",
                 str(e))
@@ -58,7 +62,8 @@ class ExceptionsTest(unittest.TestCase, gocept.testing.assertion.Exceptions):
     def test_exception_raised_fails(self):
         try:
             self.assertNothingRaised(self.provoke)
-        except AssertionError, e:
+        except AssertionError:
+            _, e, _ = sys.exc_info()
             self.assertEqual(
                 'AssertionError("Exception raised: '
                 'RuntimeError(\'provoked\',)",)',
@@ -75,7 +80,8 @@ class ExceptionsTest(unittest.TestCase, gocept.testing.assertion.Exceptions):
         try:
             with self.assertNothingRaised():
                 self.provoke()
-        except AssertionError, e:
+        except AssertionError:
+            _, e, _ = sys.exc_info()
             self.assertEqual(
                 'AssertionError("Exception raised: '
                 'RuntimeError(\'provoked\',)",)',

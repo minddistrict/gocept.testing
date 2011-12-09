@@ -28,5 +28,6 @@ A collection of test helpers, additional assertions, and the like.
     ],
     extras_require=dict(test=[
         'mock',
+        'six',
     ]),
 )
