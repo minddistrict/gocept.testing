@@ -118,6 +118,49 @@ Mocking properties
 .. _`mock documentation`: http://www.voidspace.org.uk/python/mock/examples.html
 
 
+Attribute patch context
+=======================
+
+This has nothing to do with mocks, it's a convenience helper for setting and
+automatically resetting attributes of objects::
+
+    class MyTest(unittest.TestCase):
+
+        def setUp(self):
+            self.patches = gocept.testing.patch.Patches()
+            self.subject = MyClass()
+
+        def tearDown(self):
+            self.patches.reset()
+
+        def test_something(self):
+            self.assertEqual('one', self.subject.foo)
+            self.patches.set(self.subject, 'foo', 'two')
+            self.assertEqual('two', self.subject.foo)
+
+
+Method call patch context
+=========================
+
+This allows to call a method and reset it later on automatically. At the
+moment, only methods that take a single parameter are supported, by passing in
+both the new value and the old value (to which it should be reset)::
+
+    class MyTest(unittest.TestCase):
+
+        def setUp(self):
+            self.patches = gocept.testing.patch.Patches()
+
+        def tearDown(self):
+            self.patches.reset()
+
+        def test_something(self):
+            self.patches.call(
+                zope.component.hooks, 'setSite',
+                my_site, zope.component.hooks.getSite())
+
+
+
 Development
 ===========
 
