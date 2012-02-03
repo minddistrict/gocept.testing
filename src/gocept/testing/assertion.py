@@ -4,6 +4,7 @@
 import difflib
 import doctest
 import sys
+import traceback
 
 
 def text(arg):
@@ -67,4 +68,13 @@ class AssertNothingRaisedContext(object):
     def __exit__(self, exc_type, exc_value, tb):
         if exc_type is None:
             return True
-        raise self.failureException('Exception raised: ' + repr(exc_value))
+        exc_name = exc_type.__name__
+        message = (
+            'Unexpectedly raised %s, original traceback follows:\n'
+            % exc_name)
+        # cut off "Traceback: (most recent call last)" and the original
+        #  message, since we're printing that ourselves
+        stack = ''.join(
+            traceback.format_exception(exc_type, exc_value, tb)[1:-1])
+        text = message + stack + 'Unexpected %s: %s' % (exc_name, exc_value)
+        raise self.failureException(text)
