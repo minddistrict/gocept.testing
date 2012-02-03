@@ -4,7 +4,7 @@ Changelog
 1.4 (unreleased)
 ----------------
 
-- Nothing changed yet.
+- Display original traceback in ``assertNothingRaised``.
 
 
 1.3 (2011-12-16)

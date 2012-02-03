@@ -52,7 +52,9 @@ class EllipsisTest(unittest.TestCase,
             self.fail('nothing raised')
 
 
-class ExceptionsTest(unittest.TestCase, gocept.testing.assertion.Exceptions):
+class ExceptionsTest(unittest.TestCase,
+                     gocept.testing.assertion.Exceptions,
+                     gocept.testing.assertion.Ellipsis):
 
     def add(self, *args):
         self.sum = sum(args)
@@ -69,9 +71,9 @@ class ExceptionsTest(unittest.TestCase, gocept.testing.assertion.Exceptions):
             self.assertNothingRaised(self.provoke)
         except AssertionError:
             _, e, _ = sys.exc_info()
-            self.assertEqual(
-                'AssertionError("Exception raised: '
-                'RuntimeError(\'provoked\',)",)',
+            self.assertEllipsis(
+                'AssertionError(\'Unexpectedly raised RuntimeError...'
+                'Unexpected RuntimeError: provoked\',)',
                 repr(e))
         else:
             self.fail('Nothing raised')
@@ -87,9 +89,9 @@ class ExceptionsTest(unittest.TestCase, gocept.testing.assertion.Exceptions):
                 self.provoke()
         except AssertionError:
             _, e, _ = sys.exc_info()
-            self.assertEqual(
-                'AssertionError("Exception raised: '
-                'RuntimeError(\'provoked\',)",)',
+            self.assertEllipsis(
+                'AssertionError(\'Unexpectedly raised RuntimeError...'
+                'Unexpected RuntimeError: provoked\',)',
                 repr(e))
         else:
             self.fail('Nothing raised')
