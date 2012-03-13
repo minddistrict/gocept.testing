@@ -24,7 +24,7 @@ A collection of test helpers, additional assertions, and the like.
     license='ZPL',
     namespace_packages=['gocept'],
     install_requires=[
-        'setuptools',
+        'distribute',
     ],
     extras_require=dict(test=[
         'mock',
