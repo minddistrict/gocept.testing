@@ -23,6 +23,10 @@ $Id: bootstrap.py 102545 2009-08-06 14:49:47Z chrisw $
 import os, shutil, sys, tempfile, urllib2
 from optparse import OptionParser
 
+if sys.version_info.major == 3:
+    execfile('bootstrap2.py')
+    sys.exit()
+
 tmpeggs = tempfile.mkdtemp()
 
 is_jython = sys.platform.startswith('java')
