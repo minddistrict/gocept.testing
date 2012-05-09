@@ -1,3 +1,4 @@
+# coding: utf-8
 # Copyright (c) 2011 gocept gmbh & co. kg
 # See also LICENSE.txt
 
@@ -30,12 +31,12 @@ class EllipsisTest(unittest.TestCase,
         # helpful for zope.testbrowser
         with self.assertNothingRaised():
             self.assertEllipsis(
-                u('...bar...'), u('foo bar baz').encode('utf-8'))
+                u('...bar...'), u('föö bar baz').encode('utf-8'))
 
     def test_utf8_matches_unicode(self):
         with self.assertNothingRaised():
             self.assertEllipsis(
-                u('...bar...').encode('utf-8'), u('foo bar baz'))
+                u('...bar...').encode('utf-8'), u('föö bar baz'))
 
     def test_inverse_assertion(self):
         with self.assertNothingRaised():

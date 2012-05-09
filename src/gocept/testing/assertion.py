@@ -9,9 +9,11 @@ import traceback
 
 def text(arg):
     if sys.version_info < (3,):
-        return arg
-    if not isinstance(arg, str):
-        arg = arg.decode('utf-8')
+        if isinstance(arg, str):
+            arg = arg.decode('utf-8')
+    else:
+        if not isinstance(arg, str):
+            arg = arg.decode('utf-8')
     return arg
 
 
