@@ -160,6 +160,21 @@ both the new value and the old value (to which it should be reset)::
                 my_site, zope.component.hooks.getSite())
 
 
+Temporary directory
+===================
+
+``gocept.testing.fixture.TempDir`` encapsulates the common pattern to create a
+temporary directory and delete it after the test has run. The name of the
+directory is avaliable as ``self.tmpdir``. Note that since
+``unittest.TestCase`` does not call `super`, you need to mix in ``TempDir``
+first::
+
+    class MyTest(gocept.testing.fixture.TempDir, unittest.TestCase):
+
+        def test_something(self):
+            self.assertTrue(os.path.isdir(self.tmpdir))
+
+
 
 Development
 ===========
