@@ -1,8 +1,8 @@
 Changelog
 =========
 
-1.3.3 (unreleased)
-------------------
+1.4 (2012-06-04)
+----------------
 
 - Add ``TempDir`` fixture.
 - Add ``assertStartsWith``, ``assertEndsWith``.
