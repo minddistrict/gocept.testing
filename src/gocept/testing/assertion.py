@@ -80,3 +80,14 @@ class AssertNothingRaisedContext(object):
             traceback.format_exception(exc_type, exc_value, tb)[1:-1])
         text = message + stack + 'Unexpected %s: %s' % (exc_name, exc_value)
         raise self.failureException(text)
+
+
+class String(object):
+
+    def assertStartsWith(self, needle, haystack):
+        if not haystack.startswith(needle):
+            self.fail('%r does not start with %r.' % (haystack, needle))
+
+    def assertEndsWith(self, needle, haystack):
+        if not haystack.endswith(needle):
+            self.fail('%r does not end with %r.' % (haystack, needle))

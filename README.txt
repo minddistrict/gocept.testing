@@ -34,6 +34,20 @@ To use, inherit from ``gocept.testing.assertion.Ellipsis`` in addition to
 ``unittest.TestCase``.
 
 
+assertStartsWith, assertEndsWith
+================================
+
+::
+
+    class MyTest(unittest.TestCase, gocept.testing.assertion.Ellipsis):
+
+        def test_something(self):
+            self.assertStartsWith('foo', 'foobar') # --> pass
+            self.assertEndsWith('bar', 'foobar') # --> pass
+            self.assertStartsWith('qux', 'foobar') # --> fail
+            self.assertEndsWith('qux', 'foobar') # --> fail
+
+
 assertNothingRaised
 ===================
 
