@@ -4,7 +4,7 @@ Changelog
 1.5 (unreleased)
 ----------------
 
-- Nothing changed yet.
+- Add ``.patch.Dict``, a dict patching context manager.
 
 
 1.4 (2012-06-04)

@@ -174,6 +174,20 @@ both the new value and the old value (to which it should be reset)::
                 my_site, zope.component.hooks.getSite())
 
 
+Dict patching context manager
+=============================
+
+``gocept.testing.patch.Dict`` is a context manager allowing to change values
+in a dict. It restores the original dict at exit. E. g. it can be used to
+temporarily change values in ``os.environ``::
+
+    >>> with gocept.testing.patch.Dict(os.environ, foo='bar', qwe='asdf'):
+            print os.environ.get('foo')
+    bar
+    >>> print os.environ.get('foo')
+    None
+
+
 Temporary directory
 ===================
 
@@ -187,7 +201,6 @@ first::
 
         def test_something(self):
             self.assertTrue(os.path.isdir(self.tmpdir))
-
 
 
 Development

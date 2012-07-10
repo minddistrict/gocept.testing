@@ -43,3 +43,33 @@ class PatchTest(unittest.TestCase, gocept.testing.assertion.Exceptions):
         with self.assertNothingRaised():
             patches.reset()
         self.assertEqual(mock.sentinel.foo, subject.foo)
+
+
+class DictTests(unittest.TestCase):
+    """Testing ..patch.Dict."""
+
+    def test_stores_keys_in_given_dict(self):
+        import gocept.testing.patch
+        dict = {}
+        with gocept.testing.patch.Dict(dict, foo='bar'):
+            self.assertEqual({'foo': 'bar'}, dict)
+
+    def test_overwrites_existing_keys_in_dict(self):
+        import gocept.testing.patch
+        dict = {'foo': 'qwe'}
+        with gocept.testing.patch.Dict(dict, foo='bar'):
+            self.assertEqual({'foo': 'bar'}, dict)
+
+    def test_removes_previously_not_existing_key_from_dict(self):
+        import gocept.testing.patch
+        dict = {}
+        with gocept.testing.patch.Dict(dict, foo='bar'):
+            pass
+        self.assertEqual({}, dict)
+
+    def test_restores_keys_on_exit(self):
+        import gocept.testing.patch
+        dict = {'foo': 'qwe'}
+        with gocept.testing.patch.Dict(dict, foo='bar'):
+            pass
+        self.assertEqual({'foo': 'qwe'}, dict)
