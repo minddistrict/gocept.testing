@@ -1,8 +1,10 @@
-# Copyright (c) 2011 gocept gmbh & co. kg
+# Copyright (c) 2011-2012 gocept gmbh & co. kg
 # See also LICENSE.txt
+import contextlib
 
 
 class Patches(object):
+    # XXX Maybe this should be a context manager, too.
 
     def __init__(self):
         self.attributes = []
@@ -30,3 +32,14 @@ class Patches(object):
     def _reset_calls(self):
         for subject, attribute, value in self.calls:
             getattr(subject, attribute)(value)
+
+
+@contextlib.contextmanager
+def Dict(dict, **changes):
+    """Patch a dict with new keys and restore it at exit."""
+    # XXX Maybe `Patches` should be able to do this, too.
+    orig = dict.copy()
+    dict.update(changes)
+    yield
+    dict.clear()
+    dict.update(orig)
