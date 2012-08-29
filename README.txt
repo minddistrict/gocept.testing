@@ -158,7 +158,7 @@ Method call patch context
 
 This allows to call a method and reset it later on automatically. At the
 moment, only methods that take a single parameter are supported, by passing in
-both the new value and the old value (to which it should be reset)::
+both the old value (to which it should be reset) and the new value::
 
     class MyTest(unittest.TestCase):
 
@@ -171,7 +171,7 @@ both the new value and the old value (to which it should be reset)::
         def test_something(self):
             self.patches.call(
                 zope.component.hooks, 'setSite',
-                my_site, zope.component.hooks.getSite())
+                zope.component.hooks.getSite(), new_site)
 
 
 Dict patching context manager
