@@ -39,7 +39,7 @@ assertStartsWith, assertEndsWith
 
 ::
 
-    class MyTest(unittest.TestCase, gocept.testing.assertion.Ellipsis):
+    class MyTest(unittest.TestCase, gocept.testing.assertion.String):
 
         def test_something(self):
             self.assertStartsWith('foo', 'foobar') # --> pass
