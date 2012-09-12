@@ -1,10 +1,10 @@
 Changelog
 =========
 
-1.6 (unreleased)
-----------------
+1.5.1 (2012-09-12)
+------------------
 
-- Nothing changed yet.
+- Fixed documentation and faulty 1.5 release.
 
 
 1.5 (2012-07-10)
