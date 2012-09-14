@@ -73,3 +73,13 @@ class DictTests(unittest.TestCase):
         with gocept.testing.patch.Dict(dict, foo='bar'):
             pass
         self.assertEqual({'foo': 'qwe'}, dict)
+
+    def test_restores_keys_on_exit_if_exception_occurred_inside_with(self):
+        import gocept.testing.patch
+        dict = {'foo': 'qwe'}
+        try:
+            with gocept.testing.patch.Dict(dict, foo='bar'):
+                raise RuntimeError()
+        except RuntimeError:
+            pass
+        self.assertEqual({'foo': 'qwe'}, dict)

@@ -40,6 +40,8 @@ def Dict(dict, **changes):
     # XXX Maybe `Patches` should be able to do this, too.
     orig = dict.copy()
     dict.update(changes)
-    yield
-    dict.clear()
-    dict.update(orig)
+    try:
+        yield
+    finally:
+        dict.clear()
+        dict.update(orig)
