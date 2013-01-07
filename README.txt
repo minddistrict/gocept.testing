@@ -203,6 +203,23 @@ first::
             self.assertTrue(os.path.isdir(self.tmpdir))
 
 
+Comparing mtimes
+================
+
+``gocept.testing.mtime.Newer`` checks that generated files are at least as new
+as their source counterparts (similar like ``make`` works)::
+
+    class MyTest(gocept.testing.mtime.Newer, unittest.TestCase):
+
+        source_ext = '.js'
+        target_ext = '.min.js'
+        message = 'run jsmin to correct this'
+
+        def test_minified_js_files_are_younger_than_non_minified_ones(self):
+            self.check_files(pkg_resources.resource_filename(
+                'my.package', 'resources/js'))
+
+
 Development
 ===========
 
