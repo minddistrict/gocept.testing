@@ -29,12 +29,10 @@ class NewerTest(gocept.testing.fixture.TempDir,
 
     def test_fails_if_target_file_is_missing(self):
         self.touch('foo.js')
-        with self.assertRaises(AssertionError):
-            self.check_files(self.tmpdir)
+        self.assertRaises(AssertionError, self.check_files, self.tmpdir)
 
     def test_fails_if_target_file_is_older(self):
         self.touch('foo.min.js')
         time.sleep(0.02)
         self.touch('foo.js')
-        with self.assertRaises(AssertionError):
-            self.check_files(self.tmpdir)
+        self.assertRaises(AssertionError, self.check_files, self.tmpdir)

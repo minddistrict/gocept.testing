@@ -4,7 +4,7 @@ Changelog
 1.6.1 (unreleased)
 ------------------
 
-- Nothing changed yet.
+- Fix Python-2.6 compatibility of our own test suite.
 
 
 1.6.0 (2013-01-07)
