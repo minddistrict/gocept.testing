@@ -46,3 +46,14 @@ class Property(mock.Mock):
 
     def __get__(self, instance, class_):
         return self()
+
+
+class PatchHelper(object):
+
+    def setUp(self):
+        super(PatchHelper, self).setUp()
+        self.patches = Patches()
+
+    def tearDown(self):
+        self.patches.reset()
+        super(PatchHelper, self).tearDown()

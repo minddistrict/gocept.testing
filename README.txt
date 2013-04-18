@@ -90,6 +90,10 @@ It offers three methods:
 Note that ``gocept.testing`` does not declare a dependency on ``mock`` to be as
 lightweight as possible, so clients need to do that themselves.
 
+If you want to save typing, you can mix ``gocept.testing.mock.PatchHelper``
+into your TestCase, it defines a setUp method that instatiates ``Patches`` and
+a tearDown that calls ``reset()`` on it.
+
 
 .. _`mock`: http://www.voidspace.org.uk/python/mock/
 .. _`issue 30`: http://code.google.com/p/mock/issues/detail?id=30
