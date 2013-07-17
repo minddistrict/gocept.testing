@@ -1,6 +1,7 @@
 # Copyright (c) 2013 gocept gmbh & co. kg
 # See also LICENSE.txt
 
+import os
 import os.path
 import datetime
 
@@ -16,9 +17,10 @@ class Newer(object):
     delta = 3
 
     def check_files(self, path):
-        os.path.walk(path, self._check_files_in_list, None)
+        for root, dirs, files in os.walk(path):
+            self._check_files_in_list(root, dirs + files)
 
-    def _check_files_in_list(self, args, path, names):
+    def _check_files_in_list(self, path, names):
         for filename in names:
             # Exclude target_ext in the source_ext
             if filename.endswith(self.target_ext):
