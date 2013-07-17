@@ -5,6 +5,9 @@ Changelog
 ----------------
 
 - Python 3 compatibility.
+- Depend on setuptools rather than distribute now that the projects have
+  merged.
+- Use current buildout and recipes for development.
 
 
 1.7 (2013-04-18)
