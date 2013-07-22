@@ -8,5 +8,5 @@ bin
 buildout.cfg
 coverage-report
 develop-eggs
-report.xml
 parts
+report.xml
