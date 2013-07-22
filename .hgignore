@@ -1,8 +1,12 @@
 syntax: glob
 *.pyc
 *.egg-info
+.cache
+.coverage
 .installed.cfg
 bin
 buildout.cfg
+coverage-report
 develop-eggs
+report.xml
 parts
