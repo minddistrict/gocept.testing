@@ -3,10 +3,6 @@ syntax: glob
 *.egg-info
 .cache
 .coverage
-.installed.cfg
-bin
-buildout.cfg
+.tox
 coverage-report
-develop-eggs
-parts
 report.xml
