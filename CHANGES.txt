@@ -4,6 +4,9 @@ Changelog
 1.9 (unreleased)
 ----------------
 
+- Add ``retry`` decorator that runs flaky tests several times and only fails
+  when they fail each time.
+
 - Use py.test instead of zope.testrunner for this package's own tests.
 
 
