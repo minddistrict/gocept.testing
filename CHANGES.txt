@@ -1,7 +1,7 @@
 Changelog
 =========
 
-1.9 (unreleased)
+1.9 (2013-12-20)
 ----------------
 
 - Add ``retry`` decorator that runs flaky tests several times and only fails
