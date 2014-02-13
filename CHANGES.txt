@@ -4,7 +4,8 @@ Changelog
 1.10 (unreleased)
 -----------------
 
-- Nothing changed yet.
+- Remove ``retry`` decorator, it is rather useless since it does not take
+  setUp/tearDown into account.
 
 
 1.9 (2013-12-20)

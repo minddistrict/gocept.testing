@@ -224,28 +224,6 @@ as their source counterparts (similar like ``make`` works)::
                 'my.package', 'resources/js'))
 
 
-Retrying flaky tests
-====================
-
-``gocept.testing.retry`` is a decorator that calls a function several times
-(default: 3) if the function raises an exception, it is swallowed, except on
-the last repetition. This is useful for running flaky tests several times, but
-only fail when they actually fail *each* time, not only some of the time::
-
-    class MyTest(unittest.TestCase):
-
-        @gocept.testing.retry(5)
-        def test_fails_sometimes():
-            # ...
-
-Note that this does not play well with ``py.test``, since ``retry`` changes the
-function's signature to ``(*args, **kw)``, so the funcargs-based fixtures of
-``py.test`` won't work (and unfortunately, using `decorator`_ to alleviate that
-is not an option due to too much funcargs magic in ``py.test``).
-
-.. _`decorator`: https://pypi.python.org/pypi/decorator
-
-
 Development
 ===========
 
