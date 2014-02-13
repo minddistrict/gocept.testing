@@ -1,7 +1,7 @@
 Changelog
 =========
 
-1.10 (unreleased)
+1.10 (2014-02-13)
 -----------------
 
 - Remove ``retry`` decorator, it is rather useless since it does not take
