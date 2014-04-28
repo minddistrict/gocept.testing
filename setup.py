@@ -9,7 +9,7 @@ setup(
     version='1.11.dev0',
     author='Wolfgang Schnerring <ws at gocept dot com>',
     author_email='ws@gocept.com',
-    url='https://code.gocept.com/hg/public/gocept.testing',
+    url='https://bitbucket.org/gocept/gocept.testing',
     description="""\
 A collection of test helpers, additional assertions, and the like.
 """,
