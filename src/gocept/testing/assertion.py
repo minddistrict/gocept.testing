@@ -17,6 +17,16 @@ def text(arg):
     return arg
 
 
+def ellipsis_match(expected, actual):
+    """Check whether there is an ellipsis match."""
+    expected = text(expected)
+    actual = text(actual)
+    # normalize whitespace
+    norm_expected = ' '.join(expected.split())
+    norm_actual = ' '.join(actual.split())
+    return doctest._ellipsis_match(norm_expected, norm_actual)
+
+
 class Ellipsis(object):
     """Assertion helper that provides doctest-style ellipsis matching.
 
@@ -24,12 +34,7 @@ class Ellipsis(object):
     """
 
     def assertEllipsis(self, expected, actual):
-        expected = text(expected)
-        actual = text(actual)
-        # normalize whitespace
-        norm_expected = ' '.join(expected.split())
-        norm_actual = ' '.join(actual.split())
-        if doctest._ellipsis_match(norm_expected, norm_actual):
+        if ellipsis_match(expected, actual):
             return True
         # report ndiff
         engine = difflib.Differ(charjunk=difflib.IS_CHARACTER_JUNK)
@@ -40,11 +45,7 @@ class Ellipsis(object):
         self.fail('Differences (%s):\n' % kind + ''.join(diff))
 
     def assertNotEllipsis(self, expected, actual):
-        try:
-            self.assertEllipsis(expected, actual)
-        except AssertionError:
-            pass
-        else:
+        if ellipsis_match(expected, actual):
             self.fail(
                 'Value unexpectedly matches expression %r.' % expected)
 

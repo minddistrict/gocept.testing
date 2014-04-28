@@ -4,7 +4,7 @@ Changelog
 1.11 (unreleased)
 -----------------
 
-- Nothing changed yet.
+- Make ``assertNotEllipsis()`` compatible with `py.test`.
 
 
 1.10 (2014-02-13)
