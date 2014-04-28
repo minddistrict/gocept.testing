@@ -6,6 +6,8 @@ Changelog
 
 - Make ``assertNotEllipsis()`` compatible with `py.test`.
 
+- Declare Python 3.3 support.
+
 
 1.10 (2014-02-13)
 -----------------
