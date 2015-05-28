@@ -6,6 +6,8 @@ Changelog
 
 - Fix homepage URL.
 
+- Declare Python 3.4 support.
+
 
 1.10.1 (2014-04-28)
 -------------------
