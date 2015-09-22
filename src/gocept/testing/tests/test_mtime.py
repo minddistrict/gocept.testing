@@ -33,6 +33,6 @@ class NewerTest(gocept.testing.fixture.TempDir,
 
     def test_fails_if_target_file_is_older(self):
         self.touch('foo.min.js')
-        time.sleep(0.02)
+        time.sleep(1)
         self.touch('foo.js')
         self.assertRaises(AssertionError, self.check_files, self.tmpdir)
