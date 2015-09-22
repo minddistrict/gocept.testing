@@ -1,6 +1,3 @@
-# Copyright (c) 2011 gocept gmbh & co. kg
-# See also LICENSE.txt
-
 from setuptools import setup, find_packages
 
 
@@ -35,7 +32,7 @@ A collection of test helpers, additional assertions, and the like.
         'Topic :: Software Development :: Libraries :: Application Frameworks',
         'Topic :: Software Development :: Libraries :: Python Modules',
         'Topic :: Software Development :: Testing',
-        ],
+    ],
     long_description=(
         open('README.txt').read()
         + '\n\n'
