@@ -4,8 +4,8 @@ from setuptools import setup, find_packages
 setup(
     name='gocept.testing',
     version='1.11.dev0',
-    author='Wolfgang Schnerring <ws at gocept dot com>',
-    author_email='ws@gocept.com',
+    author='gocept <mail at gocept dot com>',
+    author_email='mail@gocept.com',
     url='https://bitbucket.org/gocept/gocept.testing',
     description="""\
 A collection of test helpers, additional assertions, and the like.
