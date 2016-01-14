@@ -227,8 +227,5 @@ as their source counterparts (similar like ``make`` works)::
 Development
 ===========
 
-The source code is available in the mercurial repository at
-https://code.gocept.com/hg/public/gocept.testing
-
-Please report any bugs you find at
-https://projects.gocept.com/projects/projects/gocept-testing/issues
+The mercurial repository of the source code as well as the issue tracker are
+available at <https://bitbucket.org/gocept/gocept.testing>.
