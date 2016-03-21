@@ -5,4 +5,5 @@ syntax: glob
 .coverage
 .tox
 coverage-report
-report.xml
+coverage.xml
+testreport.xml
