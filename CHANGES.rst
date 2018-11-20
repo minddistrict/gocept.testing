@@ -6,7 +6,7 @@ Changelog
 
 - Drop Python 2.6 an 3.3 support.
 
-- Add support for Python 3.6, 3.7.
+- Add support for Python 3.6, 3.7, PyPy and PyPy3.
 
 
 1.11 (2016-01-18)
