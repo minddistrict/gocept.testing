@@ -33,3 +33,15 @@ class NewerTest(gocept.testing.fixture.TempDir,
         time.sleep(1)
         self.touch('foo.js')
         self.assertRaises(AssertionError, self.check_files, self.tmpdir)
+
+    def test_mtime__Newer__4(self):
+        """It ignores files starting with underscore and raises nothing."""
+        self.touch('_foo.js')
+        with self.assertNothingRaised():
+            self.check_files(self.tmpdir)
+
+    def test_mtime__Newer__5(self):
+        """It ignores files which do not end with source_ext."""
+        self.touch('foo.jsx')
+        with self.assertNothingRaised():
+            self.check_files(self.tmpdir)
