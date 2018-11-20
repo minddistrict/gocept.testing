@@ -4,6 +4,7 @@ import unittest
 
 
 class TempDirTest(gocept.testing.fixture.TempDir, unittest.TestCase):
+    """Testing ..fixture.TempDir."""
 
     def setUp(self):
         super(TempDirTest, self).setUp()

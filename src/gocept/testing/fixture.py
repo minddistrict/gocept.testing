@@ -3,6 +3,7 @@ import shutil
 
 
 class TempDir(object):
+    """Offer a temporary directory."""
 
     def setUp(self):
         super(TempDir, self).setUp()
