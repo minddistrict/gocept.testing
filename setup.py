@@ -47,7 +47,12 @@ A collection of test helpers, additional assertions, and the like.
     install_requires=[
         'setuptools',
     ],
-    extras_require=dict(test=[
-        'mock',
-    ]),
+    extras_require=dict(
+        test=[
+            'mock',
+        ],
+        mock=[
+            'mock',
+        ],
+    ),
 )

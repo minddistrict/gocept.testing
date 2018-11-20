@@ -1,10 +1,5 @@
 from __future__ import absolute_import
-
-try:
-    import mock
-except ImportError:
-    # soft dependency
-    pass
+import mock
 
 
 class Patches(object):
