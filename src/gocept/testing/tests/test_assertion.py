@@ -70,7 +70,7 @@ class ExceptionsTest(unittest.TestCase,
             _, e, _ = sys.exc_info()
             self.assertEllipsis(
                 'AssertionError(\'Unexpectedly raised RuntimeError...'
-                'Unexpected RuntimeError: provoked\',)',
+                'Unexpected RuntimeError: provoked\'...)',
                 repr(e))
         else:
             self.fail('Nothing raised')
@@ -88,7 +88,7 @@ class ExceptionsTest(unittest.TestCase,
             _, e, _ = sys.exc_info()
             self.assertEllipsis(
                 'AssertionError(\'Unexpectedly raised RuntimeError...'
-                'Unexpected RuntimeError: provoked\',)',
+                'Unexpected RuntimeError: provoked\'...)',
                 repr(e))
         else:
             self.fail('Nothing raised')
