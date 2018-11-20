@@ -8,6 +8,8 @@ Changelog
 
 - Add support for Python 3.6, 3.7, PyPy and PyPy3.
 
+- Choose explicit ``[mock]`` extra to use ``gocept.testing.mock``.
+
 
 1.11 (2016-01-18)
 -----------------
