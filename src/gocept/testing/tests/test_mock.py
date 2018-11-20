@@ -1,6 +1,3 @@
-# Copyright (c) 2011 gocept gmbh & co. kg
-# See also LICENSE.txt
-
 from __future__ import absolute_import
 import gocept.testing.mock
 import mock
@@ -87,6 +84,7 @@ class PropertyTest(unittest.TestCase):
 
     def test_usable_to_patch_property(self):
         dummy = Dummy()
+        self.assertFalse(dummy.foo)
         with mock.patch.object(Dummy, 'foo',
                                gocept.testing.mock.Property()) as foo:
             foo.return_value = True
