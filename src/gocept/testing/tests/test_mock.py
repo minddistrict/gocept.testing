@@ -89,3 +89,30 @@ class PropertyTest(unittest.TestCase):
                                gocept.testing.mock.Property()) as foo:
             foo.return_value = True
             self.assertTrue(dummy.foo)
+
+
+class PatchHelperTests(gocept.testing.mock.PatchHelper, unittest.TestCase):
+    """Testing ..mock.PatchHelper"""
+
+    def setUp(self):
+        """Has patches after setup."""
+        assert hasattr(self, 'patches') is False
+        super(PatchHelperTests, self).setUp()
+        assert hasattr(self, 'patches') is True
+        self.foo = mock.sentinel.foo
+        self.bar = mock.sentinel.bar
+        self.subject = mock.Mock()
+        self.subject.foo = self.foo
+
+    def test_patch__PatchHelper__1(self):
+        """It changes attributes."""
+        self.patches.add_object(self.subject, 'foo', self.bar)
+        assert self.bar == self.subject.foo
+
+    def tearDown(self):
+        """Reset patches after teardown."""
+        # still the same as in test
+        assert self.bar == self.subject.foo
+        # it was re-setted.
+        super(PatchHelperTests, self).tearDown()
+        assert self.foo == self.subject.foo

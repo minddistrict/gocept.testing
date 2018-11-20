@@ -73,7 +73,7 @@ class ExceptionsTest(unittest.TestCase,
                 'Unexpected RuntimeError: provoked\'...)',
                 repr(e))
         else:
-            self.fail('Nothing raised')
+            self.fail('nothing raised')
 
     def test_usable_as_context_manager(self):
         with self.assertNothingRaised():
@@ -91,7 +91,7 @@ class ExceptionsTest(unittest.TestCase,
                 'Unexpected RuntimeError: provoked\'...)',
                 repr(e))
         else:
-            self.fail('Nothing raised')
+            self.fail('nothing raised')
 
 
 class StringTest(unittest.TestCase,
