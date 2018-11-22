@@ -1,6 +1,12 @@
 Changelog
 =========
 
+2.1 (unreleased)
+----------------
+
+- Nothing changed yet.
+
+
 2.0.post1 (2018-11-22)
 ----------------------
 

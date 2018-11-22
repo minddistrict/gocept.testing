@@ -3,7 +3,7 @@ from setuptools import setup, find_packages
 
 setup(
     name='gocept.testing',
-    version='2.0.post1',
+    version='2.1.dev0',
     author='gocept <mail at gocept dot com>',
     author_email='mail@gocept.com',
     url='https://bitbucket.org/gocept/gocept.testing',
