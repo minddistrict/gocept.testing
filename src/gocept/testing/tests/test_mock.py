@@ -1,6 +1,6 @@
 from __future__ import absolute_import
+from gocept.testing.mock import mock
 import gocept.testing.mock
-import mock
 import sys
 import unittest
 
