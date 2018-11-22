@@ -1,6 +1,3 @@
-# Copyright (c) 2013 gocept gmbh & co. kg
-# See also LICENSE.txt
-
 import os
 import os.path
 import datetime

@@ -24,8 +24,10 @@ A collection of test helpers, additional assertions, and the like.
         'Programming Language :: Python :: 3.4',
         'Programming Language :: Python :: 3.5',
         'Programming Language :: Python :: 3.6',
+        'Programming Language :: Python :: 3.7',
         'Programming Language :: Python :: Implementation',
         'Programming Language :: Python :: Implementation :: CPython',
+        'Programming Language :: Python :: Implementation :: PyPy',
         'Topic :: Software Development',
         'Topic :: Software Development :: Libraries',
         'Topic :: Software Development :: Libraries :: Application Frameworks',
@@ -33,9 +35,9 @@ A collection of test helpers, additional assertions, and the like.
         'Topic :: Software Development :: Testing',
     ],
     long_description=(
-        open('README.txt').read()
+        open('README.rst').read()
         + '\n\n'
-        + open('CHANGES.txt').read()),
+        + open('CHANGES.rst').read()),
     packages=find_packages('src'),
     package_dir={'': 'src'},
     include_package_data=True,
@@ -45,8 +47,12 @@ A collection of test helpers, additional assertions, and the like.
     install_requires=[
         'setuptools',
     ],
-    extras_require=dict(test=[
-        'mock',
-        'six',
-    ]),
+    extras_require=dict(
+        test=[
+            'mock ; python_version<"3.3"',
+        ],
+        mock=[
+            'mock ; python_version<"3.3"',
+        ],
+    ),
 )

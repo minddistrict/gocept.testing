@@ -1,8 +1,4 @@
 # coding: utf-8
-# Copyright (c) 2011 gocept gmbh & co. kg
-# See also LICENSE.txt
-
-from six import u
 import gocept.testing.assertion
 import sys
 import unittest
@@ -24,19 +20,19 @@ class EllipsisTest(unittest.TestCase,
             self.assertEqual(
                 'Differences (ndiff with -expected +actual):\n- foo\n+ bar\n',
                 str(e))
-        else:
+        else:  # pragma: no cover: we want the test to fail.
             self.fail('nothing raised')
 
     def test_unicode_matches_utf8(self):
         # helpful for zope.testbrowser
         with self.assertNothingRaised():
             self.assertEllipsis(
-                u('...bar...'), u('föö bar baz').encode('utf-8'))
+                u'...bar...', u'föö bar baz'.encode('utf-8'))
 
     def test_utf8_matches_unicode(self):
         with self.assertNothingRaised():
             self.assertEllipsis(
-                u('...bar...').encode('utf-8'), u('föö bar baz'))
+                u'...bar...'.encode('utf-8'), u'föö bar baz')
 
     def test_inverse_assertion(self):
         with self.assertNothingRaised():
@@ -49,7 +45,7 @@ class EllipsisTest(unittest.TestCase,
             self.assertEqual(
                 "Value unexpectedly matches expression '...bar...'.",
                 str(e))
-        else:
+        else:  # pragma: no cover: we want the test to fail.
             self.fail('nothing raised')
 
 
@@ -74,10 +70,10 @@ class ExceptionsTest(unittest.TestCase,
             _, e, _ = sys.exc_info()
             self.assertEllipsis(
                 'AssertionError(\'Unexpectedly raised RuntimeError...'
-                'Unexpected RuntimeError: provoked\',)',
+                'Unexpected RuntimeError: provoked\'...)',
                 repr(e))
-        else:
-            self.fail('Nothing raised')
+        else:  # pragma: no cover: we want the test to fail.
+            self.fail('nothing raised')
 
     def test_usable_as_context_manager(self):
         with self.assertNothingRaised():
@@ -92,10 +88,10 @@ class ExceptionsTest(unittest.TestCase,
             _, e, _ = sys.exc_info()
             self.assertEllipsis(
                 'AssertionError(\'Unexpectedly raised RuntimeError...'
-                'Unexpected RuntimeError: provoked\',)',
+                'Unexpected RuntimeError: provoked\'...)',
                 repr(e))
-        else:
-            self.fail('Nothing raised')
+        else:  # pragma: no cover: we want the test to fail.
+            self.fail('nothing raised')
 
 
 class StringTest(unittest.TestCase,
@@ -113,7 +109,7 @@ class StringTest(unittest.TestCase,
             self.assertEqual(
                 "'bar' does not start with 'foo'.",
                 str(e))
-        else:
+        else:  # pragma: no cover: we want the test to fail.
             self.fail('nothing raised')
 
     def test_endswith(self):
@@ -127,5 +123,5 @@ class StringTest(unittest.TestCase,
             self.assertEqual(
                 "'foo' does not end with 'bar'.",
                 str(e))
-        else:
+        else:  # pragma: no cover: we want the test to fail.
             self.fail('nothing raised')
