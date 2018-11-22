@@ -43,6 +43,7 @@ A collection of test helpers, additional assertions, and the like.
     include_package_data=True,
     zip_safe=False,
     license='ZPL',
+    keywords="testing unittest assertions",
     namespace_packages=['gocept'],
     install_requires=[
         'setuptools',
