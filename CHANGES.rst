@@ -4,7 +4,7 @@ Changelog
 2.1 (unreleased)
 ----------------
 
-- Nothing changed yet.
+- Fix PyPI page rendering.
 
 
 2.0 (2018-11-22)
