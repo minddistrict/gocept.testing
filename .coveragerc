@@ -4,9 +4,6 @@ source = gocept.testing
 
 [report]
 precision = 2
-exclude_lines =
-    pragma: no cover
-    nothing raised
 
 [html]
 directory = coverage-report
