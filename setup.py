@@ -8,8 +8,7 @@ setup(
     author_email='mail@gocept.com',
     url='https://bitbucket.org/gocept/gocept.testing',
     description="""\
-A collection of test helpers, additional assertions, and the like.
-""",
+A collection of test helpers, additional assertions, and the like.""",
     classifiers=[
         'Development Status :: 5 - Production/Stable',
         'Intended Audience :: Developers',
