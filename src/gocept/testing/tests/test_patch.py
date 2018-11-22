@@ -1,6 +1,6 @@
+from gocept.testing.mock import mock
 import gocept.testing.assertion
 import gocept.testing.patch
-import mock
 import unittest
 
 

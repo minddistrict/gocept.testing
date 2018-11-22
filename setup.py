@@ -49,10 +49,10 @@ A collection of test helpers, additional assertions, and the like.
     ],
     extras_require=dict(
         test=[
-            'mock',
+            'mock ; python_version<"3.3"',
         ],
         mock=[
-            'mock',
+            'mock ; python_version<"3.3"',
         ],
     ),
 )
