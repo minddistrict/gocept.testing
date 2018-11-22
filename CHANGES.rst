@@ -1,8 +1,8 @@
 Changelog
 =========
 
-2.0 (unreleased)
------------------
+2.0 (2018-11-22)
+----------------
 
 - Drop Python 2.6 an 3.3 support.
 
