@@ -1,0 +1,6 @@
+include *.rst
+include *.yml
+include .coveragerc
+include pytest.ini
+include tox.ini
+recursive-include src *.py
