@@ -1,8 +1,8 @@
 Changelog
 =========
 
-2.1 (unreleased)
-----------------
+2.0.post1 (2018-11-22)
+----------------------
 
 - Fix PyPI page rendering.
 
