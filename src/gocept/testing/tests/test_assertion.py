@@ -20,7 +20,7 @@ class EllipsisTest(unittest.TestCase,
             self.assertEqual(
                 'Differences (ndiff with -expected +actual):\n- foo\n+ bar\n',
                 str(e))
-        else:
+        else:  # pragma: no cover: we want the test to fail.
             self.fail('nothing raised')
 
     def test_unicode_matches_utf8(self):
@@ -45,7 +45,7 @@ class EllipsisTest(unittest.TestCase,
             self.assertEqual(
                 "Value unexpectedly matches expression '...bar...'.",
                 str(e))
-        else:
+        else:  # pragma: no cover: we want the test to fail.
             self.fail('nothing raised')
 
 
@@ -72,7 +72,7 @@ class ExceptionsTest(unittest.TestCase,
                 'AssertionError(\'Unexpectedly raised RuntimeError...'
                 'Unexpected RuntimeError: provoked\'...)',
                 repr(e))
-        else:
+        else:  # pragma: no cover: we want the test to fail.
             self.fail('nothing raised')
 
     def test_usable_as_context_manager(self):
@@ -90,7 +90,7 @@ class ExceptionsTest(unittest.TestCase,
                 'AssertionError(\'Unexpectedly raised RuntimeError...'
                 'Unexpected RuntimeError: provoked\'...)',
                 repr(e))
-        else:
+        else:  # pragma: no cover: we want the test to fail.
             self.fail('nothing raised')
 
 
@@ -109,7 +109,7 @@ class StringTest(unittest.TestCase,
             self.assertEqual(
                 "'bar' does not start with 'foo'.",
                 str(e))
-        else:
+        else:  # pragma: no cover: we want the test to fail.
             self.fail('nothing raised')
 
     def test_endswith(self):
@@ -123,5 +123,5 @@ class StringTest(unittest.TestCase,
             self.assertEqual(
                 "'foo' does not end with 'bar'.",
                 str(e))
-        else:
+        else:  # pragma: no cover: we want the test to fail.
             self.fail('nothing raised')
