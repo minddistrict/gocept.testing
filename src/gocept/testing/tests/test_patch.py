@@ -1,9 +1,6 @@
-# Copyright (c) 2011 gocept gmbh & co. kg
-# See also LICENSE.txt
-
+from gocept.testing.mock import mock
 import gocept.testing.assertion
 import gocept.testing.patch
-import mock
 import unittest
 
 

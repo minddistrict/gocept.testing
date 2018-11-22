@@ -1,13 +1,8 @@
-# Copyright (c) 2011 gocept gmbh & co. kg
-# See also LICENSE.txt
-
 from __future__ import absolute_import
-
 try:
-    import mock
+    from unittest import mock
 except ImportError:
-    # soft dependency
-    pass
+    import mock
 
 
 class Patches(object):
