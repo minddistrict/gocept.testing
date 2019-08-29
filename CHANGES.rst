@@ -6,6 +6,8 @@ Changelog
 
 - Nothing changed yet.
 
+- Migrate to Github.
+
 
 2.0.post1 (2018-11-22)
 ----------------------

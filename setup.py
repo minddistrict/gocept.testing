@@ -6,7 +6,7 @@ setup(
     version='2.1.dev0',
     author='gocept <mail at gocept dot com>',
     author_email='mail@gocept.com',
-    url='https://bitbucket.org/gocept/gocept.testing',
+    url='https://github.com/gocept/gocept.testing',
     description="""\
 A collection of test helpers, additional assertions, and the like.""",
     classifiers=[
