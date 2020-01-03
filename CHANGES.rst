@@ -4,9 +4,11 @@ Changelog
 2.1 (unreleased)
 ----------------
 
-- Nothing changed yet.
-
 - Migrate to Github.
+
+- Test with Python 3.8.
+
+- Stop testing with Python 3.4 and 3.5
 
 
 2.0.post1 (2018-11-22)
