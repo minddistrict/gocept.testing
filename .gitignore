@@ -1,8 +1,8 @@
-syntax: glob
-*.pyc
 *.egg-info
+*.pyc
 .cache
 .coverage
+.coverage.*
 .pytest_cache/
 .tox
 coverage-report
