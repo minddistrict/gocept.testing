@@ -2,6 +2,12 @@
 gocept.testing
 ==============
 
+.. image:: https://travis-ci.com/gocept/gocept.testing.svg?branch=master
+    :target: https://travis-ci.com/gocept/gocept.testing
+.. image:: https://coveralls.io/repos/github/gocept/gocept.testing/badge.svg
+    :target: https://coveralls.io/github/gocept/gocept.testing
+
+
 This package collects various helpers for writing tests.
 
 .. contents:: :depth: 1
