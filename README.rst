@@ -233,5 +233,5 @@ as their source counterparts (similar like ``make`` works)::
 Development
 ===========
 
-The mercurial repository of the source code as well as the issue tracker are
-available at <https://bitbucket.org/gocept/gocept.testing>.
+The git repository of the source code as well as the issue tracker are
+available at https://github.com/gocept/gocept.testing.
