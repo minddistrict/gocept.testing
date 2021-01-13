@@ -2,8 +2,9 @@
 gocept.testing
 ==============
 
-.. image:: https://travis-ci.com/gocept/gocept.testing.svg?branch=master
-    :target: https://travis-ci.com/gocept/gocept.testing
+.. image:: https://github.com/gocept/gocept.testing/workflows/tests/badge.svg
+    :target: https://github.com/gocept/gocept.testing/actions?query=workflow%3Atests
+
 .. image:: https://coveralls.io/repos/github/gocept/gocept.testing/badge.svg
     :target: https://coveralls.io/github/gocept/gocept.testing
 

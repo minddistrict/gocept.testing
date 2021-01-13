@@ -4,6 +4,8 @@ source = gocept.testing
 
 [report]
 precision = 2
+# PY2 should be updated to 100 when Python 3 only.
+fail_under = 98
 
 [html]
 directory = coverage-report
