@@ -10,6 +10,8 @@ Changelog
 
 - Stop testing with Python 3.4 and 3.5
 
+- Use Github actions as CI.
+
 
 2.0.post1 (2018-11-22)
 ----------------------
