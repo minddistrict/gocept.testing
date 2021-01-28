@@ -1,5 +1,5 @@
-import tempfile
 import shutil
+import tempfile
 
 
 class TempDir(object):
