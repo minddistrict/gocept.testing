@@ -1,6 +1,6 @@
+import datetime
 import os
 import os.path
-import datetime
 
 
 class Newer(object):
