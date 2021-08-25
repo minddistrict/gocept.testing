@@ -1,17 +1,20 @@
 Changelog
 =========
 
-2.1 (unreleased)
+3.0 (unreleased)
 ----------------
 
-- Migrate to Github.
+Backwards incompatible changes
+++++++++++++++++++++++++++++++
 
-- Test with Python 3.8.
 - Change license form ZPL to MIT.
 
-- Stop testing with Python 3.4 and 3.5
+- Drop support for Python 2, 3.4, 3.5 and 3.6
 
-- Use Github actions as CI.
+Features
+++++++++
+
+- Add support for Python 3.8, 3.9 and 3.10 (as of rc.1).
 
 
 2.0.post1 (2018-11-22)

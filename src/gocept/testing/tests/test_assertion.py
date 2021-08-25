@@ -1,4 +1,3 @@
-# coding: utf-8
 import gocept.testing.assertion
 import sys
 import unittest
@@ -27,12 +26,12 @@ class EllipsisTest(unittest.TestCase,
         # helpful for zope.testbrowser
         with self.assertNothingRaised():
             self.assertEllipsis(
-                u'...bar...', u'föö bar baz'.encode('utf-8'))
+                '...bar...', 'föö bar baz'.encode())
 
     def test_utf8_matches_unicode(self):
         with self.assertNothingRaised():
             self.assertEllipsis(
-                u'...bar...'.encode('utf-8'), u'föö bar baz')
+                b'...bar...', 'föö bar baz')
 
     def test_inverse_assertion(self):
         with self.assertNothingRaised():

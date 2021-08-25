@@ -1,13 +1,7 @@
-from __future__ import absolute_import
+from unittest import mock
 
 
-try:
-    from unittest import mock
-except ImportError:
-    import mock
-
-
-class Patches(object):
+class Patches:
 
     def __init__(self):
         self.patches = []
@@ -33,7 +27,7 @@ class Patches(object):
         self.patches[:] = []
 
 
-class Assertions(object):
+class Assertions:
 
     def assertCalledWith(self, mock, *args, **kw):
         return mock.assert_called_with(*args, **kw)
@@ -45,12 +39,12 @@ class Property(mock.Mock):
         return self()
 
 
-class PatchHelper(object):
+class PatchHelper:
 
     def setUp(self):
-        super(PatchHelper, self).setUp()
+        super().setUp()
         self.patches = Patches()
 
     def tearDown(self):
         self.patches.reset()
-        super(PatchHelper, self).tearDown()
+        super().tearDown()

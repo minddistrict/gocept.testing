@@ -2,13 +2,13 @@ import shutil
 import tempfile
 
 
-class TempDir(object):
+class TempDir:
     """Offer a temporary directory."""
 
     def setUp(self):
-        super(TempDir, self).setUp()
+        super().setUp()
         self.tmpdir = tempfile.mkdtemp()
 
     def tearDown(self):
-        super(TempDir, self).tearDown()
+        super().tearDown()
         shutil.rmtree(self.tmpdir)

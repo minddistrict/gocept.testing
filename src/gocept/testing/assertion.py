@@ -1,16 +1,11 @@
 import difflib
 import doctest
-import sys
 import traceback
 
 
 def text(arg):
-    if sys.version_info < (3,):
-        if isinstance(arg, str):
-            arg = arg.decode('utf-8')
-    else:
-        if not isinstance(arg, str):
-            arg = arg.decode('utf-8')
+    if not isinstance(arg, str):
+        arg = arg.decode('utf-8')
     return arg
 
 
@@ -24,7 +19,7 @@ def ellipsis_match(expected, actual):
     return doctest._ellipsis_match(norm_expected, norm_actual)
 
 
-class Ellipsis(object):
+class Ellipsis:
     """Assertion helper that provides doctest-style ellipsis matching.
 
     Inherit from this class in additition to unittest.TestCase.
@@ -47,7 +42,7 @@ class Ellipsis(object):
                 'Value unexpectedly matches expression %r.' % expected)
 
 
-class Exceptions(object):
+class Exceptions:
 
     def assertNothingRaised(self, callable=None, *args, **kw):
         context = AssertNothingRaisedContext(self)
@@ -57,7 +52,7 @@ class Exceptions(object):
             callable(*args, **kw)
 
 
-class AssertNothingRaisedContext(object):
+class AssertNothingRaisedContext:
 
     def __init__(self, test_case):
         self.failureException = test_case.failureException
@@ -76,16 +71,16 @@ class AssertNothingRaisedContext(object):
         #  message, since we're printing that ourselves
         stack = ''.join(
             traceback.format_exception(exc_type, exc_value, tb)[1:-1])
-        text = message + stack + 'Unexpected %s: %s' % (exc_name, exc_value)
+        text = message + stack + f'Unexpected {exc_name}: {exc_value}'
         raise self.failureException(text)
 
 
-class String(object):
+class String:
 
     def assertStartsWith(self, needle, haystack):
         if not haystack.startswith(needle):
-            self.fail('%r does not start with %r.' % (haystack, needle))
+            self.fail(f'{haystack!r} does not start with {needle!r}.')
 
     def assertEndsWith(self, needle, haystack):
         if not haystack.endswith(needle):
-            self.fail('%r does not end with %r.' % (haystack, needle))
+            self.fail(f'{haystack!r} does not end with {needle!r}.')
