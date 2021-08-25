@@ -7,6 +7,7 @@ Changelog
 - Migrate to Github.
 
 - Test with Python 3.8.
+- Change license form ZPL to MIT.
 
 - Stop testing with Python 3.4 and 3.5
 
