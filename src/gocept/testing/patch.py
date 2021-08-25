@@ -1,7 +1,7 @@
 import contextlib
 
 
-class Patches(object):
+class Patches:
     # XXX Maybe this should be a context manager, too.
 
     def __init__(self):

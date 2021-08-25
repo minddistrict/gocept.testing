@@ -16,7 +16,7 @@ class PatchTest(unittest.TestCase, gocept.testing.assertion.Exceptions):
         self.assertEqual(mock.sentinel.foo, subject.foo)
 
     def test_callable_attribute_called_and_reset(self):
-        class Dummy(object):
+        class Dummy:
             def foo(self, arg):
                 self.arg = arg
 

@@ -7,7 +7,7 @@ class TempDirTest(gocept.testing.fixture.TempDir, unittest.TestCase):
     """Testing ..fixture.TempDir."""
 
     def setUp(self):
-        super(TempDirTest, self).setUp()
+        super().setUp()
         with open(os.path.join(self.tmpdir, 'foo'), 'w') as f:
             f.write('bar')
 

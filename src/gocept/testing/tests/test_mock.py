@@ -1,4 +1,3 @@
-from __future__ import absolute_import
 from gocept.testing.mock import mock
 import gocept.testing.mock
 import sys
@@ -73,7 +72,7 @@ class AssertionTest(unittest.TestCase, gocept.testing.mock.Assertions):
         self.assertCalledWith(dummy, True)
 
 
-class Dummy(object):
+class Dummy:
 
     @property
     def foo(self):
@@ -97,7 +96,7 @@ class PatchHelperTests(gocept.testing.mock.PatchHelper, unittest.TestCase):
     def setUp(self):
         """Has patches after setup."""
         assert hasattr(self, 'patches') is False
-        super(PatchHelperTests, self).setUp()
+        super().setUp()
         assert hasattr(self, 'patches') is True
         self.foo = mock.sentinel.foo
         self.bar = mock.sentinel.bar
@@ -114,5 +113,5 @@ class PatchHelperTests(gocept.testing.mock.PatchHelper, unittest.TestCase):
         # still the same as in test
         assert self.bar == self.subject.foo
         # it was re-setted.
-        super(PatchHelperTests, self).tearDown()
+        super().tearDown()
         assert self.foo == self.subject.foo

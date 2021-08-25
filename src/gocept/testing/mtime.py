@@ -3,7 +3,7 @@ import os
 import os.path
 
 
-class Newer(object):
+class Newer:
 
     source_ext = NotImplemented
     target_ext = NotImplemented
@@ -33,13 +33,13 @@ class Newer(object):
 
             self.assertTrue(
                 os.path.exists(target_path),
-                "%s does not exist.\n%s" % (target_filename, self.message))
+                f"{target_filename} does not exist.\n{self.message}")
             target_mtime = os.path.getmtime(target_path)
             file_mtime = os.path.getmtime(filepath)
             delta = file_mtime - target_mtime
             self.assertTrue(
                 delta < self.delta,
-                "%s is out of date: %s (%s) > %s (%s), Delta: %s.\n%s" % (
+                "{} is out of date: {} ({}) > {} ({}), Delta: {}.\n{}".format(
                     target_path, self.to_str(file_mtime), filename,
                     self.to_str(target_mtime), target_filename,
                     delta, self.message))
