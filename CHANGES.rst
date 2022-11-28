@@ -4,7 +4,7 @@ Changelog
 3.1 (unreleased)
 ----------------
 
-- Nothing changed yet.
+- Add support for Python 3.11.
 
 
 3.0 (2021-08-26)
