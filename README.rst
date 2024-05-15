@@ -11,7 +11,7 @@ gocept.testing
 
 This package collects various helpers for writing tests.
 
-.. contents:: :depth: 1
+.. contents::
 
 
 assertEllipsis
