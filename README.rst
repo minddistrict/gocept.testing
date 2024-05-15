@@ -235,4 +235,4 @@ Development
 ===========
 
 The git repository of the source code as well as the issue tracker are
-available at https://github.com/gocept/gocept.testing.
+available at https://github.com/minddistrict/gocept.testing.
