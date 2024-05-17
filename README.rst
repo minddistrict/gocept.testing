@@ -2,11 +2,11 @@
 gocept.testing
 ==============
 
-.. image:: https://github.com/gocept/gocept.testing/workflows/tests/badge.svg
-    :target: https://github.com/gocept/gocept.testing/actions?query=workflow%3Atests
+.. image:: https://github.com/minddistrict/gocept.testing/workflows/tests/badge.svg
+    :target: https://github.com/minddistrict/gocept.testing/actions?query=workflow%3Atests
 
-.. image:: https://coveralls.io/repos/github/gocept/gocept.testing/badge.svg
-    :target: https://coveralls.io/github/gocept/gocept.testing
+.. image:: https://coveralls.io/repos/github/minddistrict/gocept.testing/badge.svg
+    :target: https://coveralls.io/github/minddistrict/gocept.testing
 
 
 This package collects various helpers for writing tests.
@@ -18,7 +18,7 @@ assertEllipsis
 ==============
 
 An assertion which is very helpful when using Testbrowser with
-unittest.TestCase (instead of doctests).
+``unittest.TestCase`` (instead of ``doctest``).
 
 Some examples::
 
@@ -75,7 +75,7 @@ mock patch context
 
 ``gocept.testing.mock.Patches`` collects `mock`_ patches that are valid for the
 whole TestCase, and resets them all in one go in tearDown (this is pending
-incluion upstream as ``mock.patcher()``, see `issue 30`_)::
+inclusion upstream as ``mock.patcher()``, see `issue 30`_)::
 
     class MyTest(unittest.TestCase):
 
@@ -98,7 +98,7 @@ Note that ``gocept.testing`` does not declare a dependency on ``mock`` to be as
 lightweight as possible, so clients need to do that themselves.
 
 If you want to save typing, you can mix ``gocept.testing.mock.PatchHelper``
-into your TestCase, it defines a setUp method that instatiates ``Patches`` and
+into your TestCase, it defines a setUp method that instantiates ``Patches`` and
 a tearDown that calls ``reset()`` on it.
 
 

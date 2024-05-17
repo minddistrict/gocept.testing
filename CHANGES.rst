@@ -4,7 +4,15 @@ Changelog
 3.1 (unreleased)
 ----------------
 
-- Add support for Python 3.11.
+Backwards incompatible changes
+++++++++++++++++++++++++++++++
+
+- Drop support for Python 3.7, 3.8.
+
+Features
+++++++++
+
+- Add support for Python 3.11, 3.12 and 3.13 (as of beta 1).
 
 
 3.0 (2021-08-26)
@@ -20,7 +28,7 @@ Backwards incompatible changes
 Features
 ++++++++
 
-- Add support for Python 3.8, 3.9 and 3.10 (as of rc.1).
+- Add support for Python 3.8, 3.9 and 3.10 (as of rc.1).
 
 
 2.0.post1 (2018-11-22)

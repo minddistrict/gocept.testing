@@ -22,7 +22,7 @@ def ellipsis_match(expected, actual):
 class Ellipsis:
     """Assertion helper that provides doctest-style ellipsis matching.
 
-    Inherit from this class in additition to unittest.TestCase.
+    Inherit from this class in addition to unittest.TestCase.
     """
 
     def assertEllipsis(self, expected, actual):
@@ -30,16 +30,15 @@ class Ellipsis:
             return True
         # report ndiff
         engine = difflib.Differ(charjunk=difflib.IS_CHARACTER_JUNK)
-        diff = list(engine.compare(expected.splitlines(True),
-                                   actual.splitlines(True)))
+        diff = list(
+            engine.compare(expected.splitlines(True), actual.splitlines(True)))
         kind = 'ndiff with -expected +actual'
         diff = [line.rstrip() + '\n' for line in diff]
         self.fail('Differences (%s):\n' % kind + ''.join(diff))
 
     def assertNotEllipsis(self, expected, actual):
         if ellipsis_match(expected, actual):
-            self.fail(
-                'Value unexpectedly matches expression %r.' % expected)
+            self.fail('Value unexpectedly matches expression %r.' % expected)
 
 
 class Exceptions:
@@ -64,9 +63,8 @@ class AssertNothingRaisedContext:
         if exc_type is None:
             return True
         exc_name = exc_type.__name__
-        message = (
-            'Unexpectedly raised %s, original traceback follows:\n'
-            % exc_name)
+        message = ('Unexpectedly raised %s, original traceback follows:\n' %
+                   exc_name)
         # cut off "Traceback: (most recent call last)" and the original
         #  message, since we're printing that ourselves
         stack = ''.join(
