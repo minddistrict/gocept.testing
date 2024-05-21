@@ -1,7 +1,7 @@
 Changelog
 =========
 
-3.1 (unreleased)
+4.0 (2024-05-21)
 ----------------
 
 Backwards incompatible changes
