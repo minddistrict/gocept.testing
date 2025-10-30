@@ -1,4 +1,3 @@
-from setuptools import find_packages
 from setuptools import setup
 
 
@@ -35,13 +34,10 @@ A collection of test helpers, additional assertions, and the like.""",
     ],
     long_description=(open('README.rst').read() + '\n\n' +
                       open('CHANGES.rst').read()),
-    packages=find_packages('src'),
-    package_dir={'': 'src'},
     include_package_data=True,
     zip_safe=False,
     license='MIT',
     keywords="testing unittest assertions",
-    namespace_packages=['gocept'],
     python_requires='>=3.9',
     install_requires=[
         'setuptools',
