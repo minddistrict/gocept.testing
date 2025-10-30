@@ -3,7 +3,7 @@ from setuptools import setup
 
 setup(
     name='gocept.testing',
-    version='5.0.dev0',
+    version='5.0',
     author='minddistrict <mail at minddistrict dot com>',
     author_email='mail@minddistrict.com',
     url='https://github.com/minddistrict/gocept.testing',
