@@ -1,10 +1,9 @@
-from setuptools import find_packages
 from setuptools import setup
 
 
 setup(
     name='gocept.testing',
-    version='4.1.dev0',
+    version='5.0.dev0',
     author='minddistrict <mail at minddistrict dot com>',
     author_email='mail@minddistrict.com',
     url='https://github.com/minddistrict/gocept.testing',
@@ -35,13 +34,10 @@ A collection of test helpers, additional assertions, and the like.""",
     ],
     long_description=(open('README.rst').read() + '\n\n' +
                       open('CHANGES.rst').read()),
-    packages=find_packages('src'),
-    package_dir={'': 'src'},
     include_package_data=True,
     zip_safe=False,
     license='MIT',
     keywords="testing unittest assertions",
-    namespace_packages=['gocept'],
     python_requires='>=3.9',
     install_requires=[
         'setuptools',
