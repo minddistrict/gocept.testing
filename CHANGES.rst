@@ -4,7 +4,8 @@ Changelog
 5.1 (unreleased)
 ----------------
 
-- Nothing changed yet.
+- Drop the unused ``setuptools`` requirement: nothing here imports
+  ``setuptools`` or ``pkg_resources``.
 
 
 5.0 (2025-10-30)

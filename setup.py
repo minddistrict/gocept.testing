@@ -39,7 +39,5 @@ A collection of test helpers, additional assertions, and the like.""",
     license='MIT',
     keywords="testing unittest assertions",
     python_requires='>=3.9',
-    install_requires=[
-        'setuptools',
-    ],
 )
+
