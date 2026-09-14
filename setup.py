@@ -40,3 +40,4 @@ A collection of test helpers, additional assertions, and the like.""",
     keywords="testing unittest assertions",
     python_requires='>=3.9',
 )
+
