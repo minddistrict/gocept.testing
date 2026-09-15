@@ -1,11 +1,25 @@
 Changelog
 =========
 
-5.1 (unreleased)
+6.0 (unreleased)
 ----------------
+
+Backwards incompatible changes
+++++++++++++++++++++++++++++++
+
+- Remove ``assertStartsWith`` and ``assertEndsWith``: Python 3.14 ships its
+  own versions in ``unittest.TestCase`` which take their arguments in the
+  opposite order. Use the ones from the standard library instead.
+
+Other changes
++++++++++++++
 
 - Drop the unused ``setuptools`` requirement: nothing here imports
   ``setuptools`` or ``pkg_resources``.
+
+- Drop support for Python 3.9.
+
+- Add support for Python 3.14 and 3.15 (as of rc.2).
 
 
 5.0 (2025-10-30)
