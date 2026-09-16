@@ -4,8 +4,6 @@ Changelog
 6.0 (unreleased)
 ----------------
 
-- Move package metadata from setup.py to pyproject.toml.
-
 Backwards incompatible changes
 ++++++++++++++++++++++++++++++
 
@@ -22,6 +20,8 @@ Other changes
 - Drop support for Python 3.9.
 
 - Add support for Python 3.14 and 3.15 (as of rc.2).
+
+- Move package metadata from setup.py to pyproject.toml.
 
 
 5.0 (2025-10-30)

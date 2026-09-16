@@ -1,5 +1,4 @@
-# Generated with zope.meta (https://zopemeta.readthedocs.io/) from:
-# https://github.com/zopefoundation/meta/tree/master/src/zope/meta/<none>
+# Generated with zope.meta (https://zopemeta.readthedocs.io/)
 [project]
 name = "gocept.testing"
 version = "6.0.dev0"
