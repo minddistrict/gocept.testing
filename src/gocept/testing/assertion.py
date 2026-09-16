@@ -71,14 +71,3 @@ class AssertNothingRaisedContext:
             traceback.format_exception(exc_type, exc_value, tb)[1:-1])
         text = message + stack + f'Unexpected {exc_name}: {exc_value}'
         raise self.failureException(text)
-
-
-class String:
-
-    def assertStartsWith(self, needle, haystack):
-        if not haystack.startswith(needle):
-            self.fail(f'{haystack!r} does not start with {needle!r}.')
-
-    def assertEndsWith(self, needle, haystack):
-        if not haystack.endswith(needle):
-            self.fail(f'{haystack!r} does not end with {needle!r}.')

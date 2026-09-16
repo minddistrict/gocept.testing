@@ -91,36 +91,3 @@ class ExceptionsTest(unittest.TestCase,
                 repr(e))
         else:  # pragma: no cover: we want the test to fail.
             self.fail('nothing raised')
-
-
-class StringTest(unittest.TestCase,
-                 gocept.testing.assertion.Exceptions,
-                 gocept.testing.assertion.String):
-
-    def test_startswith(self):
-        with self.assertNothingRaised():
-            self.assertStartsWith('foo', 'foobar')
-
-        try:
-            self.assertStartsWith('foo', 'bar')
-        except AssertionError:
-            _, e, _ = sys.exc_info()
-            self.assertEqual(
-                "'bar' does not start with 'foo'.",
-                str(e))
-        else:  # pragma: no cover: we want the test to fail.
-            self.fail('nothing raised')
-
-    def test_endswith(self):
-        with self.assertNothingRaised():
-            self.assertEndsWith('bar', 'foobar')
-
-        try:
-            self.assertEndsWith('bar', 'foo')
-        except AssertionError:
-            _, e, _ = sys.exc_info()
-            self.assertEqual(
-                "'foo' does not end with 'bar'.",
-                str(e))
-        else:  # pragma: no cover: we want the test to fail.
-            self.fail('nothing raised')
