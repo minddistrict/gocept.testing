@@ -21,6 +21,8 @@ Other changes
 
 - Add support for Python 3.14 and 3.15 (as of rc.2).
 
+- Move package metadata from setup.py to pyproject.toml.
+
 
 5.0 (2025-10-30)
 ----------------
