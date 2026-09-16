@@ -4,6 +4,8 @@ Changelog
 6.0 (unreleased)
 ----------------
 
+- Move package metadata from setup.py to pyproject.toml.
+
 Backwards incompatible changes
 ++++++++++++++++++++++++++++++
 
