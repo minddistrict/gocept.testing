@@ -1,7 +1,7 @@
 # Generated with zope.meta (https://zopemeta.readthedocs.io/)
 [project]
 name = "gocept.testing"
-version = "6.0.dev0"
+version = "6.0"
 description = "A collection of test helpers, additional assertions, and the like."
 license = "MIT"
 classifiers = [
